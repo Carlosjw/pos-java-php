@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<?php
+define("AUTOR_BLOG", 'Carlos Lima');
+?>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Blog PEssoal</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<!-- COpor da página Web -->
+
+<body class="w3-light-grey w3-container">
+    <!-- Cabeçalho do corpo da página Web -->
+    <header class="w3-container w3-center w3-padding-32">
+        <h1><b>Meu Blog Pessoal</b></h1>
+        <p>Seja bem vindo! Criado por <span class="w3-tag"><?PHP echo AUTOR_BLOG ?></span></p>
+    </header>
+    <!-- Conteúdo da página Web -->
+    <div class="w3-row">
+        <div class="w3-col w3-container" style="width: 65%">
+            <!-- Postagens -->
+            <div class="w3-card-4 w3-margin w3-white">
+                <img src="https://picsum.photos/200?random=3" alt="random-image" style="width: 100%">
+                <div class="w3-container">
+                    <h3>
+                        <p>GAMES</p>
+                    </h3>
+                    <h5>O mundo virtual está cada vez mais real!, <span class="w3-opacity">Agosto 8, 2018</span></h5>
+                </div>
+                <div class="w3-container">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero minima laboriosam possimus at
+                        earum exercitationem nihil inventore officiis, obcaecati veritatis pariatur nam magnam esse
+                        accusantium ea. Unde iure velit laudantium?
+                    </p>
+                    <div class="w3-row">
+                        <div class="w3-col">
+
+                        </div>
+                        <div class="w3-col" style="width: 80%">
+                            <p>
+                                <buton class="w3-button w3-padding-large w3-white w3-border">
+                                    <b>Leia mais...</b>
+                                </buton>
+                            </p>
+                        </div>
+                        <div class="w3-col w3-hide-small">
+                            <p>
+                                <span class="w3-padding-large w3-right">
+                                    <b>Comments</b>
+                                    <span class="w3-tag">5</span>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-card-4 w3-margin w3-white">
+                <img src="https://picsum.photos/200?random=1" alt="random-image" style="width: 100%">
+                <div class="w3-container">
+                    <h3>
+                        <p>GAMES</p>
+                    </h3>
+                    <h5>O mundo virtual está cada vez mais real!, <span class="w3-opacity">Agosto 8, 2018</span></h5>
+                </div>
+                <div class="w3-container">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero minima laboriosam possimus at
+                        earum exercitationem nihil inventore officiis, obcaecati veritatis pariatur nam magnam esse
+                        accusantium ea. Unde iure velit laudantium?
+                    </p>
+                    <div class="w3-row">
+                        <div class="w3-col">
+
+                        </div>
+                        <div class="w3-col" style="width: 80%">
+                            <p>
+                                <buton class="w3-button w3-padding-large w3-white w3-border">
+                                    <b>Leia mais...</b>
+                                </buton>
+                            </p>
+                        </div>
+                        <div class="w3-col w3-hide-small">
+                            <p>
+                                <span class="w3-padding-large w3-right">
+                                    <b>Comments</b>
+                                    <span class="w3-tag">120</span>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w3-col w3-container" style="width: 35%">
+            <!-- Bloco de apresentação -->
+            <div class="w3-card w3-margin">
+                <img src="./20240728_172652.jpg" alt="minha-lata-veia" style="width: 100%">
+                <div class="w3-container w3-white">
+                    <h4><b><?PHP echo AUTOR_BLOG?></b></h4>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates numquam dolore voluptate
+                        commodi deserunt odio ut adipisci vero vitae. Doloremque maxime asperiores cupiditate impedit
+                        quasi officia. Fuga nihil placeat similique.
+                    </p>
+                </div>
+            </div>
+            <hr>
+            <!-- Bloco TOP 5 -->
+            <div class="w3-card w3-margin">
+                <div class="w3-container w3-padding">
+                    <h4>Postagens Mais Populares</h4>
+                </div>
+                <ul class="w3-ul w3-hoverable w3-white">
+                    <li class="w3-padding-16">
+                        <img src="https://picsum.photos/200?random=6" alt="default-image"
+                            class="w3-left w3-margin-right" style="width: 50px">
+                        <span class="w3-large">Dez motivos para aprender HTML5 + W3.CSS</span>
+                        <br>
+                        <span>Comentários: 142</span>
+                    </li>
+                    <li class="w3-padding-16">
+                        <img src="https://picsum.photos/200?random=5" alt="default-image"
+                            class="w3-left w3-margin-right" style="width: 50px">
+                        <span class="w3-large">Experiência em Gravidade 0</span>
+                        <br>
+                        <span>Comentários: 10</span>
+                    </li>
+                    <li class="w3-padding-16">
+                        <img src="https://picsum.photos/200?random=4" alt="default-image"
+                            class="w3-left w3-margin-right" style="width: 50px">
+                        <span class="w3-large">Como morar sozinho</span>
+                        <br>
+                        <span>Comentários: 7</span>
+                    </li>
+                    <li class="w3-padding-16">
+                        <img src="https://picsum.photos/200?random=3" alt="default-image"
+                            class="w3-left w3-margin-right" style="width: 50px">
+                        <span class="w3-large">Melhores músicas anos 90</span>
+                        <br>
+                        <span>Comentários: 3</span>
+                    </li>
+                    <li class="w3-padding-16">
+                        <img src="https://picsum.photos/200?random=2" alt="default-image"
+                            class="w3-left w3-margin-right" style="width: 50px">
+                        <span class="w3-large">O que fazer num sábado chuvoso</span>
+                        <br>
+                        <span>Comentários: 2</span>
+                    </li>
+                </ul>
+            </div>
+            <hr>
+            <div class="w3-card w3-margin">
+                <div class="w3-container w3-padding">
+                    <h4>Categorias</h4>
+                </div>
+                <div class="w3-ccontainer w3-white">
+                    <p>
+                        <span class="w3-tag w3-black w3-margin-bottom">Todas</span>
+                        <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Viagens</span>
+                        <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Esportes</span>
+                        <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Política</span>
+                        <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Família</span>
+                        <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Games</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rodapé da página -->
+    <footer class="w3-container w3-dark-grey w3-margin-top w3-cell-row">
+        <div class="w3-container w3-cell w3-cell-top">
+            <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom">
+                Anterior
+            </button>
+            <button class="w3-button w3-black w3-padding-large w3-margin-bottom">
+                Próximo
+            </button>
+        </div>
+        <div class="w3-container w3-cell w3-cell-bottom">
+            <br><br><br>
+            <p>Introdução ao Coding (we) by Luiz Fernando Corcini</p>
+        </div>
+        <div class="w3-container w3-cell w3-cell-top">
+            <a href="#" class="w3-padding w3-xxlarge fa fa-facebook"></a>
+            <a href="#" class="w3-padding w3-xxlarge fa fa-twitter"></a>
+            <a href="#" class="w3-padding w3-xxlarge fa fa-instagram"></a>
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>
