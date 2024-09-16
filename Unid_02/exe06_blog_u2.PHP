@@ -61,7 +61,7 @@ $Bloco_TOP5 = array(
 <body class="w3-light-grey w3-container">
     <!-- Cabeçalho do corpo da página Web -->
     <header class="w3-container w3-center w3-padding-32">
-        <h1><b><?php $Blog_Titulo ?></b></h1>
+        <h1>Meu blog Pessoal</h1>
         <p> <?php echo $Mensagem_Boas_Vindas ?><span class="w3-tag"><?php echo AUTOR_BLOG ?></span></p>
     </header>
     <!-- Conteúdo da página Web -->
