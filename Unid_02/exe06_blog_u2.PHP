@@ -9,9 +9,40 @@ $FirstPostTitle = "O mundo virtual está cada vez mais real!";
 $FirstPostDate = "Agosto 8, 2018";
 $FirstPost = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero minima laboriosam possimus at earum exercitationem nihil inventore officiis, obcaecati veritatis pariatur nam magnam esse accusantium ea. Unde iure velit laudantium?";
 $SecondPostTitle = "O mundo virtual está cada vez mais real!";
-$SecondPostDate = "Agosto 8, 2018";
+$SecondPostDate = "Agosto 30, 2018";
 $SecondPost = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero minima laboriosam possimus at earum exercitationem nihil inventore officiis, obcaecati veritatis pariatur nam magnam esse accusantium ea. Unde iure velit laudantium?";
+$ThirtPostTitle = "O mundo virtual está cada vez mais real!";
+$ThirtPostDate = "Setembro 11, 2018";
+$ThirtPost = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero minima laboriosam possimus at earum exercitationem nihil inventore officiis, obcaecati veritatis pariatur nam magnam esse accusantium ea. Unde iure velit laudantium?";
 $AboutAuthor = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates numquam dolore voluptate commodi deserunt odio ut adipisci vero vitae. Doloremque maxime asperiores cupiditate impedit quasi officia. Fuga nihil placeat similique.";
+
+// POSTAGENS PRINCIPAIS
+$Postagens_Principais = array(
+    1 => array(
+        "nPostagem" => $NPostagens += 1,
+        "img" => "https://picsum.photos/200?random=3",
+        "tittle" => $FirstPostTitle,
+        "date" => $FirstPostDate,
+        "description" => $FirstPost,
+        "comments" => 120
+    ),
+    2 => array(
+        "nPostagem" => $NPostagens += 1,
+        "img" => "https://picsum.photos/200?random=1",
+        "tittle" => $SecondPostTitle,
+        "date" => $SecondPostDate,
+        "description" => $SecondPost,
+        "comments" => 38
+    ),
+    3 => array(
+        "nPostagem" => $NPostagens += 1,
+        "img" => "https://picsum.photos/200?random=4",
+        "tittle" => $ThirtPostTitle,
+        "date" => $ThirtPostDate,
+        "description" => $ThirtPost,
+        "comments" => 56
+    ),
+);
 // Sobre o autor
 $Bloco_Apres = array(
     "img" => "./20240728_172652.jpg",
@@ -68,108 +99,55 @@ $Bloco_TOP5 = array(
     <div class="w3-row">
         <div class="w3-col w3-container" style="width: 65%">
             <!-- Postagens -->
-            <div class="w3-card-4 w3-margin w3-white">
-                <img src="https://picsum.photos/200?random=3" alt="random-image" style="width: 100%">
-                <div class="w3-container">
-                    <h3>
-                        <p>0<?php echo $NPostagens += 1 ?> - GAMES</p>
-                    </h3>
-                    <h5><?php echo $FirstPostTitle ?>, <span class="w3-opacity"><?php echo $FirstPostDate ?></span></h5>
-                </div>
-                <div class="w3-container">
-                    <p>
-                        <?php echo $FirstPost ?>
-                    </p>
-                    <div class="w3-row">
-                        <div class="w3-col">
+            <?php
+            $contador = 1;
+            while ($contador  <= 3) {
+                $S = $Postagens_Principais[$contador]["nPostagem"];
+                $T = $Postagens_Principais[$contador]["img"];
+                $U = $Postagens_Principais[$contador]["tittle"];
+                $V = $Postagens_Principais[$contador]["date"];
+                $W = $Postagens_Principais[$contador]["description"];
+                $X = $Postagens_Principais[$contador]["comments"]
+            ?>
+                <div class="w3-card-4 w3-margin w3-white">
+                    <img src=<?php echo $Postagens_Principais[$contador]["img"] ?> alt="random-image" style="width: 100%">
+                    <div class="w3-container">
+                        <h3>
+                            <p>0<?php echo $Postagens_Principais[$contador]["nPostagem"] ?> - GAMES</p>
+                        </h3>
+                        <h5><?php echo $Postagens_Principais[$contador]["tittle"] ?>, <span class="w3-opacity"><?php echo $Postagens_Principais[$contador]["date"] ?></span></h5>
+                    </div>
+                    <div class="w3-container">
+                        <p>
+                            <?php echo $Postagens_Principais[$contador]["description"] ?>
+                        </p>
+                        <div class="w3-row">
+                            <div class="w3-col">
 
-                        </div>
-                        <div class="w3-col" style="width: 80%">
-                            <p>
-                                <buton class="w3-button w3-padding-large w3-white w3-border">
-                                    <b>Leia mais...</b>
-                                </buton>
-                            </p>
-                        </div>
-                        <div class="w3-col w3-hide-small">
-                            <p>
-                                <span class="w3-padding-large w3-right">
-                                    <b>Comments</b>
-                                    <span class="w3-tag">5</span>
-                                </span>
-                            </p>
+                            </div>
+                            <div class="w3-col" style="width: 80%">
+                                <p>
+                                    <buton class="w3-button w3-padding-large w3-white w3-border">
+                                        <b>Leia mais...</b>
+                                    </buton>
+                                </p>
+                            </div>
+                            <div class="w3-col w3-hide-small">
+                                <p>
+                                    <span class="w3-padding-large w3-right">
+                                        <b>Comments</b>
+                                        <span class="w3-tag"><?php echo $Postagens_Principais[$contador]["comments"] ?></span>
+                                    </span>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="w3-card-4 w3-margin w3-white">
-                <img src="https://picsum.photos/200?random=1" alt="random-image" style="width: 100%">
-                <div class="w3-container">
-                    <h3>
-                        <p>0<?php echo $NPostagens += 1 ?> - MÚSICA</p>
-                    </h3>
-                    <h5><?php echo $SecondPostTitle ?>, <span class="w3-opacity"><?php echo $SecondPostDate ?></span></h5>
-                </div>
-                <div class="w3-container">
-                    <p>
-                        <?php echo $SecondPost ?>
-                    </p>
-                    <div class="w3-row">
-                        <div class="w3-col">
+            <?php
+                $contador++;
+            }
+            ?>
 
-                        </div>
-                        <div class="w3-col" style="width: 80%">
-                            <p>
-                                <buton class="w3-button w3-padding-large w3-white w3-border">
-                                    <b>Leia mais...</b>
-                                </buton>
-                            </p>
-                        </div>
-                        <div class="w3-col w3-hide-small">
-                            <p>
-                                <span class="w3-padding-large w3-right">
-                                    <b>Comments</b>
-                                    <span class="w3-tag">120</span>
-                                </span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="w3-card-4 w3-margin w3-white">
-                <img src="https://picsum.photos/200?random=4" alt="random-image" style="width: 100%">
-                <div class="w3-container">
-                    <h3>
-                        <p>0<?php echo $NPostagens += 1 ?> - POESIA</p>
-                    </h3>
-                    <h5><?php echo $SecondPostTitle ?>, <span class="w3-opacity"><?php echo $SecondPostDate ?></span></h5>
-                </div>
-                <div class="w3-container">
-                    <p>
-                        <?php echo $SecondPost ?>
-                    </p>
-                    <div class="w3-row">
-                        <div class="w3-col">
-
-                        </div>
-                        <div class="w3-col" style="width: 80%">
-                            <p>
-                                <buton class="w3-button w3-padding-large w3-white w3-border">
-                                    <b>Leia mais...</b>
-                                </buton>
-                            </p>
-                        </div>
-                        <div class="w3-col w3-hide-small">
-                            <p>
-                                <span class="w3-padding-large w3-right">
-                                    <b>Comments</b>
-                                    <span class="w3-tag">110</span>
-                                </span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
         <div class="w3-col w3-container" style="width: 35%">
             <!-- Bloco de apresentação -->

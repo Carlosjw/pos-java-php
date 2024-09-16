@@ -2,6 +2,15 @@
 <html lang="pt-BR">
 <?php
 define("AUTOR_BLOG", 'Carlos Lima');
+$NPostagens = 0;
+$FirstPostTitle = "O mundo virtual está cada vez mais real!";
+$FirstPostDate = "Agosto 8, 2018";
+$FirstPost = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero minima laboriosam possimus at earum exercitationem nihil inventore officiis, obcaecati veritatis pariatur nam magnam esse accusantium ea. Unde iure velit laudantium?";
+$SecondPostTitle = "O mundo virtual está cada vez mais real!";
+$SecondPostDate = "Agosto 8, 2018";
+$SecondPost = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero minima laboriosam possimus at earum exercitationem nihil inventore officiis, obcaecati veritatis pariatur nam magnam esse accusantium ea. Unde iure velit laudantium?";
+$AboutAuthor = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates numquam dolore voluptate commodi deserunt odio ut adipisci vero vitae. Doloremque maxime asperiores cupiditate impedit quasi officia. Fuga nihil placeat similique.";
+
 ?>
 
 <head>
@@ -28,15 +37,13 @@ define("AUTOR_BLOG", 'Carlos Lima');
                 <img src="https://picsum.photos/200?random=3" alt="random-image" style="width: 100%">
                 <div class="w3-container">
                     <h3>
-                        <p>GAMES</p>
+                        <p>0<?php echo $NPostagens += 1 ?> - GAMES</p>
                     </h3>
-                    <h5>O mundo virtual está cada vez mais real!, <span class="w3-opacity">Agosto 8, 2018</span></h5>
+                    <h5><?php echo $FirstPostTitle ?>, <span class="w3-opacity"><?php echo $FirstPostDate ?></span></h5>
                 </div>
                 <div class="w3-container">
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero minima laboriosam possimus at
-                        earum exercitationem nihil inventore officiis, obcaecati veritatis pariatur nam magnam esse
-                        accusantium ea. Unde iure velit laudantium?
+                        <?php echo $FirstPost ?>
                     </p>
                     <div class="w3-row">
                         <div class="w3-col">
@@ -64,15 +71,13 @@ define("AUTOR_BLOG", 'Carlos Lima');
                 <img src="https://picsum.photos/200?random=1" alt="random-image" style="width: 100%">
                 <div class="w3-container">
                     <h3>
-                        <p>GAMES</p>
+                        <p>0<?php echo $NPostagens += 1 ?> - MÚSICA</p>
                     </h3>
-                    <h5>O mundo virtual está cada vez mais real!, <span class="w3-opacity">Agosto 8, 2018</span></h5>
+                    <h5><?php echo $SecondPostTitle ?>, <span class="w3-opacity"><?php echo $SecondPostDate?></span></h5>
                 </div>
                 <div class="w3-container">
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero minima laboriosam possimus at
-                        earum exercitationem nihil inventore officiis, obcaecati veritatis pariatur nam magnam esse
-                        accusantium ea. Unde iure velit laudantium?
+                        <?php echo $SecondPost ?>
                     </p>
                     <div class="w3-row">
                         <div class="w3-col">
@@ -102,11 +107,9 @@ define("AUTOR_BLOG", 'Carlos Lima');
             <div class="w3-card w3-margin">
                 <img src="./20240728_172652.jpg" alt="minha-lata-veia" style="width: 100%">
                 <div class="w3-container w3-white">
-                    <h4><b><?PHP echo AUTOR_BLOG?></b></h4>
+                    <h4><b><?PHP echo AUTOR_BLOG ?></b></h4>
                     <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates numquam dolore voluptate
-                        commodi deserunt odio ut adipisci vero vitae. Doloremque maxime asperiores cupiditate impedit
-                        quasi officia. Fuga nihil placeat similique.
+                        <?php $AboutAuthor ?>
                     </p>
                 </div>
             </div>

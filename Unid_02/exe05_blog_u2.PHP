@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <?php
 $Blog_Titulo = "Meu Blog Pessoal";
-$Mensagem_Boas_Vindas= "Seja bem vindo! Criado por ";
+$Mensagem_Boas_Vindas = "Seja bem vindo! Criado por ";
 define("AUTOR_BLOG", 'Carlos Lima');
 $NPostagens = 0;
 $FirstPostTitle = "O mundo virtual está cada vez mais real!";
@@ -21,28 +21,28 @@ $Bloco_Apres = array(
 
 $Bloco_TOP5 = array(
     1 => array(
-        "img" =>"https://picsum.photos/200?random=6",
-        "titulo" =>"Dez motivos para aprender HTML5 + W3.CSS",
+        "img" => "https://picsum.photos/200?random=6",
+        "titulo" => "Dez motivos para aprender HTML5 + W3.CSS",
         "nComent" => 142
     ),
     2 => array(
-        "img" =>"https://picsum.photos/200?random=5",
-        "titulo" =>"Experiência em Gravidade 0",
+        "img" => "https://picsum.photos/200?random=5",
+        "titulo" => "Experiência em Gravidade 0",
         "nComent" => 10
     ),
     3 => array(
-        "img" =>"https://picsum.photos/200?random=4",
-        "titulo" =>"Como morar sozinho",
+        "img" => "https://picsum.photos/200?random=4",
+        "titulo" => "Como morar sozinho",
         "nComent" => 7
     ),
     4 => array(
-        "img" =>"https://picsum.photos/200?random=3",
-        "titulo" =>"Melhores músicas anos 90",
+        "img" => "https://picsum.photos/200?random=3",
+        "titulo" => "Melhores músicas anos 90",
         "nComent" => 7
     ),
     5 => array(
-        "img" =>"https://picsum.photos/200?random=2",
-        "titulo" =>"O que fazer num sábado chuvoso",
+        "img" => "https://picsum.photos/200?random=2",
+        "titulo" => "O que fazer num sábado chuvoso",
         "nComent" => 5
     ),
 );
@@ -61,8 +61,8 @@ $Bloco_TOP5 = array(
 <body class="w3-light-grey w3-container">
     <!-- Cabeçalho do corpo da página Web -->
     <header class="w3-container w3-center w3-padding-32">
-        <h1><b><?php $Blog_Titulo?></b></h1>
-        <p> <?php echo $Mensagem_Boas_Vindas?><span class="w3-tag"><?php echo AUTOR_BLOG ?></span></p>
+        <h1>Meu blog Pessoal</h1>
+        <p> <?php echo $Mensagem_Boas_Vindas ?><span class="w3-tag"><?php echo AUTOR_BLOG ?></span></p>
     </header>
     <!-- Conteúdo da página Web -->
     <div class="w3-row">
@@ -108,7 +108,7 @@ $Bloco_TOP5 = array(
                     <h3>
                         <p>0<?php echo $NPostagens += 1 ?> - MÚSICA</p>
                     </h3>
-                    <h5><?php echo $SecondPostTitle ?>, <span class="w3-opacity"><?php echo $SecondPostDate?></span></h5>
+                    <h5><?php echo $SecondPostTitle ?>, <span class="w3-opacity"><?php echo $SecondPostDate ?></span></h5>
                 </div>
                 <div class="w3-container">
                     <p>
@@ -142,7 +142,7 @@ $Bloco_TOP5 = array(
                     <h3>
                         <p>0<?php echo $NPostagens += 1 ?> - POESIA</p>
                     </h3>
-                    <h5><?php echo $SecondPostTitle ?>, <span class="w3-opacity"><?php echo $SecondPostDate?></span></h5>
+                    <h5><?php echo $SecondPostTitle ?>, <span class="w3-opacity"><?php echo $SecondPostDate ?></span></h5>
                 </div>
                 <div class="w3-container">
                     <p>
@@ -174,7 +174,7 @@ $Bloco_TOP5 = array(
         <div class="w3-col w3-container" style="width: 35%">
             <!-- Bloco de apresentação -->
             <div class="w3-card w3-margin">
-                <img src=<?php echo $Bloco_Apres["img"]?> alt="minha-lata-veia" style="width: 100%">
+                <img src=<?php echo $Bloco_Apres["img"] ?> alt="minha-lata-veia" style="width: 100%">
                 <div class="w3-container w3-white">
                     <h4><b><?php echo $Bloco_Apres["nome"] ?></b></h4>
                     <p>
@@ -189,41 +189,21 @@ $Bloco_TOP5 = array(
                     <h4>Postagens Mais Populares</h4>
                 </div>
                 <ul class="w3-ul w3-hoverable w3-white">
-                    <li class="w3-padding-16">
-                        <img src=<?php echo $Bloco_TOP5[1] ["img"]?> alt="default-image"
-                            class="w3-left w3-margin-right" style="width: 50px">
-                        <span class="w3-large"><?php echo $Bloco_TOP5[1] ["titulo"]?></span>
-                        <br>
-                        <span>Comentários: <?php echo $Bloco_TOP5[1]["nComent"]?></span>
-                    </li>
-                    <li class="w3-padding-16">
-                        <img src=<?php echo $Bloco_TOP5[2] ["img"]?> alt="default-image"
-                            class="w3-left w3-margin-right" style="width: 50px">
-                            <span class="w3-large"><?php echo $Bloco_TOP5[2] ["titulo"]?></span>
-                        <br>
-                        <span>Comentários: <?php echo $Bloco_TOP5[2]["nComent"]?></span>
-                    </li>
-                    <li class="w3-padding-16">
-                        <img src=<?php echo $Bloco_TOP5[3] ["img"]?> alt="default-image"
-                            class="w3-left w3-margin-right" style="width: 50px">
-                            <span class="w3-large"><?php echo $Bloco_TOP5[3] ["titulo"]?></span>
-                        <br>
-                        <span>Comentários:<?php echo $Bloco_TOP5[3]["nComent"]?></span>
-                    </li>
-                    <li class="w3-padding-16">
-                        <img src=<?php echo $Bloco_TOP5[4] ["img"]?> alt="default-image"
-                            class="w3-left w3-margin-right" style="width: 50px">
-                            <span class="w3-large"><?php echo $Bloco_TOP5[4] ["titulo"]?></span>
-                        <br>
-                        <span>Comentários:<?php echo $Bloco_TOP5[4]["nComent"]?></span>
-                    </li>
-                    <li class="w3-padding-16">
-                        <img src=<?php echo $Bloco_TOP5[5] ["img"]?> alt="default-image"
-                            class="w3-left w3-margin-right" style="width: 50px">
-                            <span class="w3-large"><?php echo $Bloco_TOP5[5] ["titulo"]?></span>
-                        <br>
-                        <span>Comentários:<?php echo $Bloco_TOP5[5]["nComent"]?></span>
-                    </li>
+                    <?php
+                    for ($i = 1; $i <= 5; $i++) {
+                        $I = $Bloco_TOP5[$i]["img"];
+                        $T = $Bloco_TOP5[$i]["titulo"];
+                        $N = $Bloco_TOP5[$i]["nComent"]; ?>
+                        <li class="w3-padding-16">
+                            <img src=<?php echo $Bloco_TOP5[$i]["img"] ?> alt="default-image"
+                                class="w3-left w3-margin-right" style="width: 50px">
+                            <span class="w3-large"><?php echo $Bloco_TOP5[$i]["titulo"] ?></span>
+                            <br>
+                            <span>Comentários: <?php echo $Bloco_TOP5[$i]["nComent"] ?></span>
+                        </li>
+                    <?php
+                    }
+                    ?>
                 </ul>
             </div>
             <hr>

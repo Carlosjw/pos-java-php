@@ -1,51 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <?php
-$Blog_Titulo = "Meu Blog Pessoal";
-$Mensagem_Boas_Vindas= "Seja bem vindo! Criado por ";
 define("AUTOR_BLOG", 'Carlos Lima');
-$NPostagens = 0;
-$FirstPostTitle = "O mundo virtual está cada vez mais real!";
-$FirstPostDate = "Agosto 8, 2018";
-$FirstPost = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero minima laboriosam possimus at earum exercitationem nihil inventore officiis, obcaecati veritatis pariatur nam magnam esse accusantium ea. Unde iure velit laudantium?";
-$SecondPostTitle = "O mundo virtual está cada vez mais real!";
-$SecondPostDate = "Agosto 8, 2018";
-$SecondPost = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero minima laboriosam possimus at earum exercitationem nihil inventore officiis, obcaecati veritatis pariatur nam magnam esse accusantium ea. Unde iure velit laudantium?";
-$AboutAuthor = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates numquam dolore voluptate commodi deserunt odio ut adipisci vero vitae. Doloremque maxime asperiores cupiditate impedit quasi officia. Fuga nihil placeat similique.";
-// Sobre o autor
-$Bloco_Apres = array(
-    "img" => "./20240728_172652.jpg",
-    "nome" => AUTOR_BLOG,
-    "descr" => $AboutAuthor
-);
-
-$Bloco_TOP5 = array(
-    1 => array(
-        "img" =>"https://picsum.photos/200?random=6",
-        "titulo" =>"Dez motivos para aprender HTML5 + W3.CSS",
-        "nComent" => 142
-    ),
-    2 => array(
-        "img" =>"https://picsum.photos/200?random=5",
-        "titulo" =>"Experiência em Gravidade 0",
-        "nComent" => 10
-    ),
-    3 => array(
-        "img" =>"https://picsum.photos/200?random=4",
-        "titulo" =>"Como morar sozinho",
-        "nComent" => 7
-    ),
-    4 => array(
-        "img" =>"https://picsum.photos/200?random=3",
-        "titulo" =>"Melhores músicas anos 90",
-        "nComent" => 7
-    ),
-    5 => array(
-        "img" =>"https://picsum.photos/200?random=2",
-        "titulo" =>"O que fazer num sábado chuvoso",
-        "nComent" => 5
-    ),
-);
 ?>
 
 <head>
@@ -61,8 +17,8 @@ $Bloco_TOP5 = array(
 <body class="w3-light-grey w3-container">
     <!-- Cabeçalho do corpo da página Web -->
     <header class="w3-container w3-center w3-padding-32">
-        <h1><b><?php $Blog_Titulo?></b></h1>
-        <p> <?php echo $Mensagem_Boas_Vindas?><span class="w3-tag"><?php echo AUTOR_BLOG ?></span></p>
+        <h1><b>Meu Blog Pessoal</b></h1>
+        <p>Seja bem vindo! Criado por <span class="w3-tag"><?PHP echo AUTOR_BLOG ?></span></p>
     </header>
     <!-- Conteúdo da página Web -->
     <div class="w3-row">
@@ -72,13 +28,15 @@ $Bloco_TOP5 = array(
                 <img src="https://picsum.photos/200?random=3" alt="random-image" style="width: 100%">
                 <div class="w3-container">
                     <h3>
-                        <p>0<?php echo $NPostagens += 1 ?> - GAMES</p>
+                        <p>GAMES</p>
                     </h3>
-                    <h5><?php echo $FirstPostTitle ?>, <span class="w3-opacity"><?php echo $FirstPostDate ?></span></h5>
+                    <h5>O mundo virtual está cada vez mais real!, <span class="w3-opacity">Agosto 8, 2018</span></h5>
                 </div>
                 <div class="w3-container">
                     <p>
-                        <?php echo $FirstPost ?>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero minima laboriosam possimus at
+                        earum exercitationem nihil inventore officiis, obcaecati veritatis pariatur nam magnam esse
+                        accusantium ea. Unde iure velit laudantium?
                     </p>
                     <div class="w3-row">
                         <div class="w3-col">
@@ -106,13 +64,15 @@ $Bloco_TOP5 = array(
                 <img src="https://picsum.photos/200?random=1" alt="random-image" style="width: 100%">
                 <div class="w3-container">
                     <h3>
-                        <p>0<?php echo $NPostagens += 1 ?> - MÚSICA</p>
+                        <p>GAMES</p>
                     </h3>
-                    <h5><?php echo $SecondPostTitle ?>, <span class="w3-opacity"><?php echo $SecondPostDate?></span></h5>
+                    <h5>O mundo virtual está cada vez mais real!, <span class="w3-opacity">Agosto 8, 2018</span></h5>
                 </div>
                 <div class="w3-container">
                     <p>
-                        <?php echo $SecondPost ?>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero minima laboriosam possimus at
+                        earum exercitationem nihil inventore officiis, obcaecati veritatis pariatur nam magnam esse
+                        accusantium ea. Unde iure velit laudantium?
                     </p>
                     <div class="w3-row">
                         <div class="w3-col">
@@ -136,49 +96,17 @@ $Bloco_TOP5 = array(
                     </div>
                 </div>
             </div>
-            <div class="w3-card-4 w3-margin w3-white">
-                <img src="https://picsum.photos/200?random=4" alt="random-image" style="width: 100%">
-                <div class="w3-container">
-                    <h3>
-                        <p>0<?php echo $NPostagens += 1 ?> - POESIA</p>
-                    </h3>
-                    <h5><?php echo $SecondPostTitle ?>, <span class="w3-opacity"><?php echo $SecondPostDate?></span></h5>
-                </div>
-                <div class="w3-container">
-                    <p>
-                        <?php echo $SecondPost ?>
-                    </p>
-                    <div class="w3-row">
-                        <div class="w3-col">
-
-                        </div>
-                        <div class="w3-col" style="width: 80%">
-                            <p>
-                                <buton class="w3-button w3-padding-large w3-white w3-border">
-                                    <b>Leia mais...</b>
-                                </buton>
-                            </p>
-                        </div>
-                        <div class="w3-col w3-hide-small">
-                            <p>
-                                <span class="w3-padding-large w3-right">
-                                    <b>Comments</b>
-                                    <span class="w3-tag">110</span>
-                                </span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
         <div class="w3-col w3-container" style="width: 35%">
             <!-- Bloco de apresentação -->
             <div class="w3-card w3-margin">
-                <img src=<?php echo $Bloco_Apres["img"]?> alt="minha-lata-veia" style="width: 100%">
+                <img src="./20240728_172652.jpg" alt="minha-lata-veia" style="width: 100%">
                 <div class="w3-container w3-white">
-                    <h4><b><?php echo $Bloco_Apres["nome"] ?></b></h4>
+                    <h4><b><?PHP echo AUTOR_BLOG?></b></h4>
                     <p>
-                        <?php $Bloco_Apres["descr"] ?>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates numquam dolore voluptate
+                        commodi deserunt odio ut adipisci vero vitae. Doloremque maxime asperiores cupiditate impedit
+                        quasi officia. Fuga nihil placeat similique.
                     </p>
                 </div>
             </div>
@@ -190,39 +118,39 @@ $Bloco_TOP5 = array(
                 </div>
                 <ul class="w3-ul w3-hoverable w3-white">
                     <li class="w3-padding-16">
-                        <img src=<?php echo $Bloco_TOP5[1] ["img"]?> alt="default-image"
+                        <img src="https://picsum.photos/200?random=6" alt="default-image"
                             class="w3-left w3-margin-right" style="width: 50px">
-                        <span class="w3-large"><?php echo $Bloco_TOP5[1] ["titulo"]?></span>
+                        <span class="w3-large">Dez motivos para aprender HTML5 + W3.CSS</span>
                         <br>
-                        <span>Comentários: <?php echo $Bloco_TOP5[1]["nComent"]?></span>
+                        <span>Comentários: 142</span>
                     </li>
                     <li class="w3-padding-16">
-                        <img src=<?php echo $Bloco_TOP5[2] ["img"]?> alt="default-image"
+                        <img src="https://picsum.photos/200?random=5" alt="default-image"
                             class="w3-left w3-margin-right" style="width: 50px">
-                            <span class="w3-large"><?php echo $Bloco_TOP5[2] ["titulo"]?></span>
+                        <span class="w3-large">Experiência em Gravidade 0</span>
                         <br>
-                        <span>Comentários: <?php echo $Bloco_TOP5[2]["nComent"]?></span>
+                        <span>Comentários: 10</span>
                     </li>
                     <li class="w3-padding-16">
-                        <img src=<?php echo $Bloco_TOP5[3] ["img"]?> alt="default-image"
+                        <img src="https://picsum.photos/200?random=4" alt="default-image"
                             class="w3-left w3-margin-right" style="width: 50px">
-                            <span class="w3-large"><?php echo $Bloco_TOP5[3] ["titulo"]?></span>
+                        <span class="w3-large">Como morar sozinho</span>
                         <br>
-                        <span>Comentários:<?php echo $Bloco_TOP5[3]["nComent"]?></span>
+                        <span>Comentários: 7</span>
                     </li>
                     <li class="w3-padding-16">
-                        <img src=<?php echo $Bloco_TOP5[4] ["img"]?> alt="default-image"
+                        <img src="https://picsum.photos/200?random=3" alt="default-image"
                             class="w3-left w3-margin-right" style="width: 50px">
-                            <span class="w3-large"><?php echo $Bloco_TOP5[4] ["titulo"]?></span>
+                        <span class="w3-large">Melhores músicas anos 90</span>
                         <br>
-                        <span>Comentários:<?php echo $Bloco_TOP5[4]["nComent"]?></span>
+                        <span>Comentários: 3</span>
                     </li>
                     <li class="w3-padding-16">
-                        <img src=<?php echo $Bloco_TOP5[5] ["img"]?> alt="default-image"
+                        <img src="https://picsum.photos/200?random=2" alt="default-image"
                             class="w3-left w3-margin-right" style="width: 50px">
-                            <span class="w3-large"><?php echo $Bloco_TOP5[5] ["titulo"]?></span>
+                        <span class="w3-large">O que fazer num sábado chuvoso</span>
                         <br>
-                        <span>Comentários:<?php echo $Bloco_TOP5[5]["nComent"]?></span>
+                        <span>Comentários: 2</span>
                     </li>
                 </ul>
             </div>
