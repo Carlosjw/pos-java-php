@@ -156,7 +156,7 @@ $Bloco_TOP5 = array(
                 <div class="w3-container w3-white">
                     <h4><b><?php echo $Bloco_Apres["nome"] ?></b></h4>
                     <p>
-                        <?php $Bloco_Apres["descr"] ?>
+                        <?php echo $Bloco_Apres["descr"] ?>
                     </p>
                 </div>
             </div>
