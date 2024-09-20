@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <?php
+// CONFIGURANDO CONEXÃO COM SERVIDOR DE BANCO DE DADOS
+header("Content-Type: text/html; charset=ISO-8859-1", true);
+define("USUARIO", "root");
+define("SENHA", "PhpAdmin@pass2024");
+define("DB", "blog_pessoal");
+define("SERVER", "localhost");
+
 $Blog_Titulo = "Meu Blog Pessoal";
 $Mensagem_Boas_Vindas = "Seja bem vindo! Criado por ";
 define("AUTOR_BLOG", 'Carlos Lima');
