@@ -76,3 +76,12 @@
     DROP(exlua) TABLE(a tabela) `t_apres`;
     */
 ```
+
+## GRAVANDO DADOS NA TABELA DO "blog_pessoal"
+```sql
+    INSERT INTO `t_apres` (`autor`, `descr`, `foto`) VALUES ('Carlos Lima', 
+    'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates 
+    numquam dolore voluptate commodi deserunt odio ut adipisci vero vitae. 
+    Doloremque maxime asperiores cupiditate impedit quasi officia. Fuga nihil
+     placeat similique.', 'https://picsum.photos/200?random=3');
+```

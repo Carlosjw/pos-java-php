@@ -12,16 +12,22 @@
 // CONFIGURANDO CONEXÃO COM SERVIDOR DE BANCO DE DADOS
 header("Content-Type: text/html; charset=utf-8", true);
 define("USUARIO", "root");
-define("SENHA", "123456");
+define("SENHA", "");
 define("DB", "blog_pessoal");
-define("SERVER", "localhost");
-$conexao = mysqli_connect(SERVER, USUARIO, DB);
+define("SERVER", "127.0.0.1");
+$conexao = mysqli_connect(SERVER, USUARIO, SENHA, DB);
 
 /* vVERIFICANDO STAUTS DA CONEXÃO*/
 if (mysqli_connect_errno()) {
     echo "Falha ao conectar com o MySQL. Motivo: " . mysqli_connect_error();
 } else {
     echo "Status OK. <br> Banco de Dados " . DB . " conectado!";
+
+    $sql = "select * FROM t_apres";
+    if ($result = mysqli_query($conexao, $sql)) {
+        while ($registro = mysqli_fetch_row($result)) {
+        }
+    }
 };
 
 $Blog_Titulo = "Meu Blog Pessoal";
