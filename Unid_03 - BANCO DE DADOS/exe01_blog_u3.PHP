@@ -1,12 +1,28 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Blog PEssoal</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
 <?php
 // CONFIGURANDO CONEXÃO COM SERVIDOR DE BANCO DE DADOS
-header("Content-Type: text/html; charset=ISO-8859-1", true);
+header("Content-Type: text/html; charset=utf-8", true);
 define("USUARIO", "root");
-define("SENHA", "PhpAdmin@pass2024");
+define("SENHA", "123456");
 define("DB", "blog_pessoal");
 define("SERVER", "localhost");
+$conexao = mysqli_connect(SERVER, USUARIO, DB);
+
+/* vVERIFICANDO STAUTS DA CONEXÃO*/
+if (mysqli_connect_errno()) {
+    echo "Falha ao conectar com o MySQL. Motivo: " . mysqli_connect_error();
+} else {
+    echo "Status OK. <br> Banco de Dados " . DB . " conectado!";
+};
 
 $Blog_Titulo = "Meu Blog Pessoal";
 $Mensagem_Boas_Vindas = "Seja bem vindo! Criado por ";
@@ -85,16 +101,6 @@ $Bloco_TOP5 = array(
     ),
 );
 ?>
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Blog PEssoal</title>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-</head>
-<!-- COpor da página Web -->
 
 <body class="w3-light-grey w3-container">
     <!-- Cabeçalho do corpo da página Web -->
