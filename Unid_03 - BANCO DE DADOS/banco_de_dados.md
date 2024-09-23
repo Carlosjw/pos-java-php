@@ -51,6 +51,15 @@
     */
 ```
 
+## ADICIONAR UMA NOVA CLUNA A UMA TABELA:
+```SQL
+    ALTER TABLE `t_post` ADD `comments` VARCHAR(100000) NULL AFTER `texto`;
+    /*
+        Altere a tabela `t_post` adicionando uma coluna chamada `comments`, do tipo
+        varchar com até 100000 caracteres, que pode ser nula, após a coluna `texto`;
+    */
+```
+
 ## GRAVANDO DADOS NA TABELA DO "blog_pessoal"
 ```sql
     INSERT INTO `t_apres` (`autor`, `descr`, `foto`) VALUES ('Carlos Lima', 
@@ -65,6 +74,14 @@
     ALTER TABLE `t_post` CHANGE `subtitulo` `foto` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
     /*
         Altera na tabela `t_post` o nome da coluna `subtitulo` para o nome `foto`;
+    */
+```
+
+## EXLUIR COLUNA DE TABELA:
+```SQL
+    ALTER TABLE `t_post` DROP `figura`;
+    /*
+        Exclua na tabela `t_post` a coluna `figura`;
     */
 ```
 

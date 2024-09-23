@@ -36,44 +36,39 @@ if (mysqli_connect_errno()) {
         // libera conexão da variável
         mysqli_free_result($result);
     }
-    $NPostagens = 0;
-    $FirstPostTitle = "O mundo virtual está cada vez mais real!";
-    $FirstPostDate = "Agosto 8, 2018";
-    $FirstPost = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero minima laboriosam possimus at earum exercitationem nihil inventore officiis, obcaecati veritatis pariatur nam magnam esse accusantium ea. Unde iure velit laudantium?";
-    $SecondPostTitle = "O mundo virtual está cada vez mais real!";
-    $SecondPostDate = "Agosto 30, 2018";
-    $SecondPost = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero minima laboriosam possimus at earum exercitationem nihil inventore officiis, obcaecati veritatis pariatur nam magnam esse accusantium ea. Unde iure velit laudantium?";
-    $ThirtPostTitle = "O mundo virtual está cada vez mais real!";
-    $ThirtPostDate = "Setembro 11, 2018";
-    $ThirtPost = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero minima laboriosam possimus at earum exercitationem nihil inventore officiis, obcaecati veritatis pariatur nam magnam esse accusantium ea. Unde iure velit laudantium?";
 
-    // POSTAGENS PRINCIPAIS
-    $Postagens_Principais = array(
-        1 => array(
-            "nPostagem" => $NPostagens += 1,
-            "img" => "https://picsum.photos/200?random=3",
-            "tittle" => $FirstPostTitle,
-            "date" => $FirstPostDate,
-            "description" => $FirstPost,
-            "comments" => 120
-        ),
-        2 => array(
-            "nPostagem" => $NPostagens += 1,
-            "img" => "https://picsum.photos/200?random=1",
-            "tittle" => $SecondPostTitle,
-            "date" => $SecondPostDate,
-            "description" => $SecondPost,
-            "comments" => 38
-        ),
-        3 => array(
-            "nPostagem" => $NPostagens += 1,
-            "img" => "https://picsum.photos/200?random=4",
-            "tittle" => $ThirtPostTitle,
-            "date" => $ThirtPostDate,
-            "description" => $ThirtPost,
-            "comments" => 56
-        ),
-    );
+    $NPostagens = 0;
+    $Postagens_Principais = array(); // Inicializa o array vazio para armazenar as postagens
+    
+    $sqlPost = "SELECT * FROM t_post";
+    
+    if ($postResult = mysqli_query($conexao, $sqlPost)) {
+        while ($postRegistro = mysqli_fetch_row($postResult)) {
+            // Incrementa o contador de postagens
+            $NPostagens  += 1;
+    
+            // Armazena cada postagem no array, com o índice correspondente ao número da postagem
+            $Postagens_Principais[] = array(
+                "img" => $postRegistro[2],         // Coluna com o link da imagem
+                "nPostagem" => $NPostagens,        // Número da postagem (incrementado)
+                "tittle" => $postRegistro[1],      // Coluna com o título
+                "date" => $postRegistro[3],        // Coluna com a data
+                "description" => $postRegistro[4], // Coluna com a descrição
+                "comments" => $postRegistro[5]     // Coluna com os comentários
+            );
+        }
+        mysqli_free_result($postResult);
+    }
+    
+    // Exemplo de como acessar e exibir as postagens
+    foreach ($Postagens_Principais as $postagem) {
+        echo "Postagem #" . $postagem['nPostagem'] . ": " . $postagem['tittle'] . "<br>";
+        echo "Data: " . $postagem['date'] . "<br>";
+        echo "Descrição: " . $postagem['description'] . "<br>";
+        echo "Comentários: " . $postagem['comments'] . "<br>";
+        echo "<img src='" . $postagem['img'] . "' alt='Imagem da Postagem'><br><br>";
+    }  
+
 
     $Bloco_TOP5 = array(
         1 => array(
