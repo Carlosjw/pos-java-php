@@ -21,91 +21,95 @@ $conexao = mysqli_connect(SERVER, USUARIO, SENHA, DB);
 if (mysqli_connect_errno()) {
     echo "Falha ao conectar com o MySQL. Motivo: " . mysqli_connect_error();
 } else {
-    echo "Status OK. <br> Banco de Dados " . DB . " conectado!";
+    echo "Status <b>OK</b>. <br> Banco de Dados " . DB . " <b>conectado</b>!";
 
     $sql = "select * FROM t_apres";
     if ($result = mysqli_query($conexao, $sql)) {
-        while ($registro = mysqli_fetch_row($result)) {
+        if ($registro = mysqli_fetch_row($result)) {
+            // Sobre o autor
+            $Bloco_Apres = array(
+                "img" => $registro[2],
+                "nome" => $registro[0],
+                "descr" => $registro[1]
+            );
         }
+        // libera conexão da variável
+        mysqli_free_result($result);
     }
+    $NPostagens = 0;
+    $FirstPostTitle = "O mundo virtual está cada vez mais real!";
+    $FirstPostDate = "Agosto 8, 2018";
+    $FirstPost = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero minima laboriosam possimus at earum exercitationem nihil inventore officiis, obcaecati veritatis pariatur nam magnam esse accusantium ea. Unde iure velit laudantium?";
+    $SecondPostTitle = "O mundo virtual está cada vez mais real!";
+    $SecondPostDate = "Agosto 30, 2018";
+    $SecondPost = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero minima laboriosam possimus at earum exercitationem nihil inventore officiis, obcaecati veritatis pariatur nam magnam esse accusantium ea. Unde iure velit laudantium?";
+    $ThirtPostTitle = "O mundo virtual está cada vez mais real!";
+    $ThirtPostDate = "Setembro 11, 2018";
+    $ThirtPost = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero minima laboriosam possimus at earum exercitationem nihil inventore officiis, obcaecati veritatis pariatur nam magnam esse accusantium ea. Unde iure velit laudantium?";
+
+    // POSTAGENS PRINCIPAIS
+    $Postagens_Principais = array(
+        1 => array(
+            "nPostagem" => $NPostagens += 1,
+            "img" => "https://picsum.photos/200?random=3",
+            "tittle" => $FirstPostTitle,
+            "date" => $FirstPostDate,
+            "description" => $FirstPost,
+            "comments" => 120
+        ),
+        2 => array(
+            "nPostagem" => $NPostagens += 1,
+            "img" => "https://picsum.photos/200?random=1",
+            "tittle" => $SecondPostTitle,
+            "date" => $SecondPostDate,
+            "description" => $SecondPost,
+            "comments" => 38
+        ),
+        3 => array(
+            "nPostagem" => $NPostagens += 1,
+            "img" => "https://picsum.photos/200?random=4",
+            "tittle" => $ThirtPostTitle,
+            "date" => $ThirtPostDate,
+            "description" => $ThirtPost,
+            "comments" => 56
+        ),
+    );
+
+    $Bloco_TOP5 = array(
+        1 => array(
+            "img" => "https://picsum.photos/200?random=6",
+            "titulo" => "Dez motivos para aprender HTML5 + W3.CSS",
+            "nComent" => 142
+        ),
+        2 => array(
+            "img" => "https://picsum.photos/200?random=5",
+            "titulo" => "Experiência em Gravidade 0",
+            "nComent" => 10
+        ),
+        3 => array(
+            "img" => "https://picsum.photos/200?random=4",
+            "titulo" => "Como morar sozinho",
+            "nComent" => 7
+        ),
+        4 => array(
+            "img" => "https://picsum.photos/200?random=3",
+            "titulo" => "Melhores músicas anos 90",
+            "nComent" => 7
+        ),
+        5 => array(
+            "img" => "https://picsum.photos/200?random=2",
+            "titulo" => "O que fazer num sábado chuvoso",
+            "nComent" => 5
+        ),
+    );
 };
 
 $Blog_Titulo = "Meu Blog Pessoal";
 $Mensagem_Boas_Vindas = "Seja bem vindo! Criado por ";
 define("AUTOR_BLOG", 'Carlos Lima');
 $NPostagens = 0;
-$FirstPostTitle = "O mundo virtual está cada vez mais real!";
-$FirstPostDate = "Agosto 8, 2018";
-$FirstPost = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero minima laboriosam possimus at earum exercitationem nihil inventore officiis, obcaecati veritatis pariatur nam magnam esse accusantium ea. Unde iure velit laudantium?";
-$SecondPostTitle = "O mundo virtual está cada vez mais real!";
-$SecondPostDate = "Agosto 30, 2018";
-$SecondPost = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero minima laboriosam possimus at earum exercitationem nihil inventore officiis, obcaecati veritatis pariatur nam magnam esse accusantium ea. Unde iure velit laudantium?";
-$ThirtPostTitle = "O mundo virtual está cada vez mais real!";
-$ThirtPostDate = "Setembro 11, 2018";
-$ThirtPost = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero minima laboriosam possimus at earum exercitationem nihil inventore officiis, obcaecati veritatis pariatur nam magnam esse accusantium ea. Unde iure velit laudantium?";
-$AboutAuthor = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates numquam dolore voluptate commodi deserunt odio ut adipisci vero vitae. Doloremque maxime asperiores cupiditate impedit quasi officia. Fuga nihil placeat similique.";
 
-// POSTAGENS PRINCIPAIS
-$Postagens_Principais = array(
-    1 => array(
-        "nPostagem" => $NPostagens += 1,
-        "img" => "https://picsum.photos/200?random=3",
-        "tittle" => $FirstPostTitle,
-        "date" => $FirstPostDate,
-        "description" => $FirstPost,
-        "comments" => 120
-    ),
-    2 => array(
-        "nPostagem" => $NPostagens += 1,
-        "img" => "https://picsum.photos/200?random=1",
-        "tittle" => $SecondPostTitle,
-        "date" => $SecondPostDate,
-        "description" => $SecondPost,
-        "comments" => 38
-    ),
-    3 => array(
-        "nPostagem" => $NPostagens += 1,
-        "img" => "https://picsum.photos/200?random=4",
-        "tittle" => $ThirtPostTitle,
-        "date" => $ThirtPostDate,
-        "description" => $ThirtPost,
-        "comments" => 56
-    ),
-);
-// Sobre o autor
-$Bloco_Apres = array(
-    "img" => "./20240728_172652.jpg",
-    "nome" => AUTOR_BLOG,
-    "descr" => $AboutAuthor
-);
-
-$Bloco_TOP5 = array(
-    1 => array(
-        "img" => "https://picsum.photos/200?random=6",
-        "titulo" => "Dez motivos para aprender HTML5 + W3.CSS",
-        "nComent" => 142
-    ),
-    2 => array(
-        "img" => "https://picsum.photos/200?random=5",
-        "titulo" => "Experiência em Gravidade 0",
-        "nComent" => 10
-    ),
-    3 => array(
-        "img" => "https://picsum.photos/200?random=4",
-        "titulo" => "Como morar sozinho",
-        "nComent" => 7
-    ),
-    4 => array(
-        "img" => "https://picsum.photos/200?random=3",
-        "titulo" => "Melhores músicas anos 90",
-        "nComent" => 7
-    ),
-    5 => array(
-        "img" => "https://picsum.photos/200?random=2",
-        "titulo" => "O que fazer num sábado chuvoso",
-        "nComent" => 5
-    ),
-);
+mysqli_close($conexao);
 ?>
 
 <body class="w3-light-grey w3-container">

@@ -85,3 +85,11 @@
     Doloremque maxime asperiores cupiditate impedit quasi officia. Fuga nihil
      placeat similique.', 'https://picsum.photos/200?random=3');
 ```
+
+## RENOMEAR TABELA:
+```SQL
+    ALTER TABLE `t_post` CHANGE `subtitulo` `foto` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
+    /*
+        Altera na tabela `t_post` o nome da coluna `subtitulo` para o nome `foto`;
+    */
+```
