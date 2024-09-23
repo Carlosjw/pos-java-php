@@ -39,14 +39,14 @@ if (mysqli_connect_errno()) {
 
     $NPostagens = 0;
     $Postagens_Principais = array(); // Inicializa o array vazio para armazenar as postagens
-    
+
     $sqlPost = "SELECT * FROM t_post";
-    
+
     if ($postResult = mysqli_query($conexao, $sqlPost)) {
         while ($postRegistro = mysqli_fetch_row($postResult)) {
             // Incrementa o contador de postagens
             $NPostagens  += 1;
-    
+
             // Armazena cada postagem no array, com o índice correspondente ao número da postagem
             $Postagens_Principais[] = array(
                 "img" => $postRegistro[2],         // Coluna com o link da imagem
@@ -54,21 +54,24 @@ if (mysqli_connect_errno()) {
                 "tittle" => $postRegistro[1],      // Coluna com o título
                 "date" => $postRegistro[3],        // Coluna com a data
                 "description" => $postRegistro[4], // Coluna com a descrição
-                "comments" => $postRegistro[5]     // Coluna com os comentários
+                "comments" => $postRegistro[5],
+                //"categ " => $postRegistro[6]  // Coluna com os comentários
             );
         }
         mysqli_free_result($postResult);
     }
-    
+
+    /*
     // Exemplo de como acessar e exibir as postagens
     foreach ($Postagens_Principais as $postagem) {
+        echo "<img src='" . $postagem['img'] . "' alt='Imagem da Postagem'><br>";
         echo "Postagem #" . $postagem['nPostagem'] . ": " . $postagem['tittle'] . "<br>";
         echo "Data: " . $postagem['date'] . "<br>";
         echo "Descrição: " . $postagem['description'] . "<br>";
-        echo "Comentários: " . $postagem['comments'] . "<br>";
-        echo "<img src='" . $postagem['img'] . "' alt='Imagem da Postagem'><br><br>";
+        echo "Comentários: " . $postagem['comments'] . "<br>";        
+        echo "Categoria: " . $postagem['categ ']."<br><br>;
     }  
-
+    */
 
     $Bloco_TOP5 = array(
         1 => array(
@@ -118,20 +121,21 @@ mysqli_close($conexao);
         <div class="w3-col w3-container" style="width: 65%">
             <!-- Postagens -->
             <?php
-            $contador = 1;
-            while ($contador  <= 3) {
+            $contador = 0;
+            while ($contador  <= 4) {
                 $S = $Postagens_Principais[$contador]["nPostagem"];
                 $T = $Postagens_Principais[$contador]["img"];
                 $U = $Postagens_Principais[$contador]["tittle"];
                 $V = $Postagens_Principais[$contador]["date"];
                 $W = $Postagens_Principais[$contador]["description"];
-                $X = $Postagens_Principais[$contador]["comments"]
+                $X = $Postagens_Principais[$contador]["comments"];
+               // $Z = $Postagens_Principais[$contador]["categ"]
             ?>
                 <div class="w3-card-4 w3-margin w3-white">
                     <img src=<?php echo $Postagens_Principais[$contador]["img"] ?> alt="random-image" style="width: 100%">
                     <div class="w3-container">
                         <h3>
-                            <p>0<?php echo $Postagens_Principais[$contador]["nPostagem"] ?> - GAMES</p>
+                            <p>0<?php echo $Postagens_Principais[$contador]["nPostagem"] ?> - Categoria</p>
                         </h3>
                         <h5><?php echo $Postagens_Principais[$contador]["tittle"] ?>, <span class="w3-opacity"><?php echo $Postagens_Principais[$contador]["date"] ?></span></h5>
                     </div>
