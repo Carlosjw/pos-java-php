@@ -43,6 +43,31 @@
     */
 ```
 
+## EXLUINDO TABELA:
+```SQL
+    DROP TABLE `t_apres`;
+    /*
+    DROP(exlua) TABLE(a tabela) `t_apres`;
+    */
+```
+
+## GRAVANDO DADOS NA TABELA DO "blog_pessoal"
+```sql
+    INSERT INTO `t_apres` (`autor`, `descr`, `foto`) VALUES ('Carlos Lima', 
+    'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates 
+    numquam dolore voluptate commodi deserunt odio ut adipisci vero vitae. 
+    Doloremque maxime asperiores cupiditate impedit quasi officia. Fuga nihil
+     placeat similique.', 'https://picsum.photos/200?random=3');
+```
+
+## RENOMEAR TABELA:
+```SQL
+    ALTER TABLE `t_post` CHANGE `subtitulo` `foto` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
+    /*
+        Altera na tabela `t_post` o nome da coluna `subtitulo` para o nome `foto`;
+    */
+```
+
 # FAZENDO CONSULTAS EM BANCOS DE DADOS
 ## CONSULTA POR ID/CÓDIGO:
 ```SQL
@@ -66,30 +91,5 @@
     /*
     SELECT(selecione) *(todos os registros) FROM (da tabela) `contatos` WHERE(onde) `NOME`
     (conteúdo da coluna) LIKE '%P%'(contenha a letra 'P');
-    */
-```
-
-## EXLUINDO TABELA:
-```SQL
-    DROP TABLE `t_apres`;
-    /*
-    DROP(exlua) TABLE(a tabela) `t_apres`;
-    */
-```
-
-## GRAVANDO DADOS NA TABELA DO "blog_pessoal"
-```sql
-    INSERT INTO `t_apres` (`autor`, `descr`, `foto`) VALUES ('Carlos Lima', 
-    'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates 
-    numquam dolore voluptate commodi deserunt odio ut adipisci vero vitae. 
-    Doloremque maxime asperiores cupiditate impedit quasi officia. Fuga nihil
-     placeat similique.', 'https://picsum.photos/200?random=3');
-```
-
-## RENOMEAR TABELA:
-```SQL
-    ALTER TABLE `t_post` CHANGE `subtitulo` `foto` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
-    /*
-        Altera na tabela `t_post` o nome da coluna `subtitulo` para o nome `foto`;
     */
 ```
