@@ -14,13 +14,20 @@
         padding: 0;
         box-sizing: border-box;
     }
-    body{
+
+    body {
         width: 100dvw;
         height: 100dwh;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+    }
+
+    .main-container {
+        width: 40%;
+        height: 750px;
+        overflow: auto;
     }
 
     .main-list {
@@ -58,6 +65,28 @@
         background-color: grey;
 
     }
+
+    /* width */
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px grey;
+        border-radius: 10px;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: gray;
+        border-radius: 10px;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: silver;
+    }
 </style>
 <?php
 // CONFIGURANDO CONEXÃO COM SERVIDOR DE BANCO DE DADOS
@@ -74,8 +103,6 @@ $Biblioteca_SQL = array();
 if (mysqli_connect_errno()) {
     echo "<b>Falha</b> ao conectar no banco de dados " . "<b>" . DB . "</b>" . "<br>Motivo: " . "<b><br>" . mysqli_connect_error() . "</b>";
 } else {
-    echo "<b>Sucesso</b> ao conectar no banco de dados " . "<b>" . DB . "</b>!<br><br>";
-
     $sql_query = "SELECT * FROM livro";
     if ($result = mysqli_query($conexao, $sql_query)) {
         while ($sql_livro = mysqli_fetch_row($result)) {
@@ -95,10 +122,11 @@ if (mysqli_connect_errno()) {
 ?>
 
 <body>
-    <div class="w3-margin" style="width: 40%">
-        <div class="w3-container w3-padding w3-dark-grey w3-text-white">
-            <h4>LIVROS PARA A VIDA TODA</h4>
-        </div>
+    <div class="w3-container w3-padding w3-dark-grey w3-text-white" style="width: 40%; margin-top: 20px;">
+        <h4>LIVROS PARA A VIDA TODA</h4>
+    </div>
+    <div class="w3-margin main-container">
+
         <ul class="main-list">
             <?php
 
@@ -121,7 +149,7 @@ if (mysqli_connect_errno()) {
                     <span><b>Ano:</b> <?php echo $F ?></span><br><br>
                     <button type="button" class="collapsible">Sinopse:</button>
 
-                    <div class="content w3-card" >
+                    <div class="content w3-card">
                         <p class="w3-padding" style="text-align:justify; text-indent:2em">
                             <?php echo $G ?>
                         </p>
@@ -133,11 +161,6 @@ if (mysqli_connect_errno()) {
             ?>
         </ul>
     </div>
-
-    <footer class="w3-container w3-dark-grey w3-margin-top w3-cell-row">
-
-    </footer>
-
     <script>
         var coll = document.getElementsByClassName("collapsible");
         var i;
