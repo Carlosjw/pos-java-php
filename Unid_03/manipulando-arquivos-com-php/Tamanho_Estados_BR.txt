@@ -1,0 +1,31 @@
+Tamanhos dos Estados Brasileiros em km2
+AM – 1570,7
+PA – 1247,6
+MT – 903,3
+MG – 587,5
+BA – 564,6
+MS -357,1
+GO – 340,0
+MA – 332,0
+RS – 281,7
+TO – 277,6
+PI – 251,5
+SP – 248,2
+RO – 237,5
+RR - 224,2
+PR – 199,3
+AC – 152,5
+CE – 148,8
+AP – 142,8
+PE – 98,3
+SC – 95,3
+PB – 56,4
+RN – 52,8
+ES – 46,0
+RJ – 43,6
+AL – 27,7
+SE – 21,9
+DF – 5,8
+Cada um no seu quadrado!
+Cada um no seu quadrado!
+Cada um no seu quadrado!Cada um no seu quadrado!
