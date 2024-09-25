@@ -25,8 +25,8 @@
     }
 
     .main-container {
-        width: 40%;
-        height: 750px;
+        width: 768px;
+        height: 900px;
         overflow: auto;
     }
 
@@ -87,6 +87,10 @@
     ::-webkit-scrollbar-thumb:hover {
         background: silver;
     }
+
+    footer {
+        bottom: 0;
+    }
 </style>
 <?php
 // CONFIGURANDO CONEXÃO COM SERVIDOR DE BANCO DE DADOS
@@ -103,6 +107,8 @@ $Biblioteca_SQL = array();
 if (mysqli_connect_errno()) {
     echo "<b>Falha</b> ao conectar no banco de dados " . "<b>" . DB . "</b>" . "<br>Motivo: " . "<b><br>" . mysqli_connect_error() . "</b>";
 } else {
+
+    $message = "Conectado ao banco de dados " . "'<b>" . DB . "</b>' no servidor " . "'<b>http://" . SERVER . "</b>'";
     $sql_query = "SELECT * FROM livro";
     if ($result = mysqli_query($conexao, $sql_query)) {
         while ($sql_livro = mysqli_fetch_row($result)) {
@@ -121,8 +127,10 @@ if (mysqli_connect_errno()) {
 }
 ?>
 
+<script src="script.js" defer></script>
+
 <body>
-    <div class="w3-container w3-padding w3-dark-grey w3-text-white" style="width: 40%; margin-top: 20px;">
+    <div class="w3-container w3-padding w3-dark-grey w3-text-white" style="width: 768px; margin-top: 20px;">
         <h4>LIVROS PARA A VIDA TODA</h4>
     </div>
     <div class="w3-margin main-container">
@@ -161,22 +169,9 @@ if (mysqli_connect_errno()) {
             ?>
         </ul>
     </div>
-    <script>
-        var coll = document.getElementsByClassName("collapsible");
-        var i;
-
-        for (i = 0; i < coll.length; i++) {
-            coll[i].addEventListener("click", function() {
-                this.classList.toggle("active");
-                var content = this.nextElementSibling;
-                if (content.style.display === "block") {
-                    content.style.display = "none";
-                } else {
-                    content.style.display = "block";
-                }
-            });
-        }
-    </script>
+    <footer>
+        <p><?php echo $message ?></p>
+    </footer>
 
 </body>
 
