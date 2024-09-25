@@ -26,7 +26,7 @@
 
     .main-container {
         width: 768px;
-        height: 900px;
+        height: 750px;
         overflow: auto;
     }
 
