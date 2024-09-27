@@ -1,10 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 <?php
-class Funcionario {
+class Funcionario
+{
     public $nome;
     protected $salario;
     private $rg;
     public $desligado;
     public $depto;
+
+    public function AlterarSalario($Novo_Valor)
+    {
+        $retorno = "";
+        if ($this->salario >= $Novo_Valor)
+            $retorno = "O Funcionário " . $this->nome . " teve e salário diminuído. <br>";
+        else
+            $retorno = "O Funcionário " . $this->nome . " teve e salário aumentado. <br>";
+        $this->salario = $Novo_Valor;
+        return $retorno;
+    }
+    public function MostraSalario()
+    {
+        echo "O salário do funcionário " . $this->nome . " é de " . $this->salario . " reais. <br>";
+    }
 };
 
 $pedreiro = new Funcionario();
@@ -12,24 +36,18 @@ $pedreiro = new Funcionario();
 $TecTI = new Funcionario();
 $AnalistaTi = new Funcionario();
 
-$TecTI -> nome = "Pedro";
-$AnalistaTi -> nome = "John Connor";
+$TecTI->nome = "Pedro";
+$AnalistaTi->nome = "John Connor";
 
-echo "Os funcionários '". $TecTI->nome."' e '".$AnalistaTi-> nome."'.<br>";
+echo "Os funcionários '" . $TecTI->nome . "' e '" . $AnalistaTi->nome . "'.<br>";
 
-class Carro{
-    // Características do carro
-    public $marca = '';
-    public $modelo = '';
-    public $cor ='';
-    public $qtde_comb = '';
-    public $tam_tanque = '';
-}
+$TecTI->MostraSalario();
+echo $TecTI->AlterarSalario(20000);
+$TecTI->MostraSalario();
+?>
 
-$MyCar = new Carro();
-$MyWifeCar = new Carro();
+<body>
 
-$MyCar -> marca = "Fiat";
-$MyWifeCar -> marca = "Hyundai";
+</body>
 
-echo "Minha esposa tem um '". $MyWifeCar -> marca . "' e eu tenho um '" . $MyCar -> marca . "'.";
+</html>
