@@ -105,10 +105,10 @@ $Biblioteca_SQL = array();
 
 //VALIDANDO CONEXÃO
 if (mysqli_connect_errno()) {
-    echo "<b>Falha</b> ao conectar no banco de dados " . "<b>" . DB . "</b>" . "<br>Motivo: " . "<b><br>" . mysqli_connect_error() . "</b>";
+    $message = "<p style='color: red'><b>Falha</b> ao conectar no banco de dados " . "<b>" . DB . "</b>" . "<br>Motivo: " . "<b><br>" . mysqli_connect_error() . "</b></p>";
 } else {
 
-    $message = "Conectado ao banco de dados " . "'<b>" . DB . "</b>' no servidor " . "'<b>http://" . SERVER . "</b>'";
+    $message = "<p style='color: green'>Conectado ao banco de dados " . "'<b>" . DB . "</b>' no servidor " . "'<b>http://" . SERVER . "</b>'</p>";
     $sql_query = "SELECT * FROM livro";
     if ($result = mysqli_query($conexao, $sql_query)) {
         while ($sql_livro = mysqli_fetch_row($result)) {
