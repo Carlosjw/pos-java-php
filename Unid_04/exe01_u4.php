@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -12,7 +12,7 @@ class Funcionario
     public $nome;
     protected $salario;
     private $rg;
-    public $desligado;
+    private $desligado;
     public $depto;
 
     public function AlterarSalario($Novo_Valor)
@@ -27,7 +27,19 @@ class Funcionario
     }
     public function MostraSalario()
     {
-        echo "O salário do funcionário " . $this->nome . " é de " . $this->salario . " reais. <br>";
+        echo "O salário do funcionário " . $this->nome . " é de R$" . $this->salario . ",00. <br>";
+    }
+    public function DemitirFunconario()
+    {
+        $retorno = "";
+        if ($this->desligado == true)
+            $retorno = "O funcionário " . $this->nome . " está cadastrado como 'demitido'";
+        else {
+            $this->desligado = true;
+            $retorno = "O funcionário "
+                . $this->nome . " acabou de ser demitido!!<br>";
+        }
+        return $retorno;
     }
 };
 
@@ -44,6 +56,9 @@ echo "Os funcionários '" . $TecTI->nome . "' e '" . $AnalistaTi->nome . "'.<br>
 $TecTI->MostraSalario();
 echo $TecTI->AlterarSalario(20000);
 $TecTI->MostraSalario();
+
+echo $TecTI->DemitirFunconario();
+echo $AnalistaTi->DemitirFunconario();
 ?>
 
 <body>
