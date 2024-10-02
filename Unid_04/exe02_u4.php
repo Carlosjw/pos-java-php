@@ -15,6 +15,16 @@ class Funcionario
     private $desligado;
     public $depto;
 
+    // Usando o constructor
+    function __construct()
+    {
+        $this->nome = "";
+        $this->salario = 0;
+        $this->rg = "";
+        $this->desligado = false;
+        $this->depto = "";
+    }
+
     //Métodopara alterar salário do funcionário
     public function AlterarSalario($Novo_Valor)
     {
@@ -47,18 +57,30 @@ class Funcionario
     }
 };
 
-$TecTI = new Funcionario();
-$AnalistaTi = new Funcionario();
+$Funcionario01 = new Funcionario();
+$Funcionario02 = new Funcionario();
 
-$TecTI->nome = "Pedro";
-$AnalistaTi->nome = "John Connor";
+if ($Funcionario01->nome == NULL) {
+    echo "Valor nulo<br>";
+} else {
+    echo $Funcionario01->nome . "<br>";
+    $Funcionario01->nome = "Pedro";
+    $Funcionario02->nome = "John Connor";
+}
 
-$TecTI->MostraSalario();
-echo $TecTI->AlterarSalario("20.000");
-$TecTI->MostraSalario();
+if ($Funcionario01->nome == NULL) {
+    echo "Valor nulo<br>";
+} else {
+    echo $Funcionario01->nome . "<br>";
+}
 
-echo $AnalistaTi->DemitirFunconario();
-echo $AnalistaTi->DemitirFunconario();
+
+$Funcionario01->MostraSalario();
+echo $Funcionario01->AlterarSalario("20.000");
+$Funcionario01->MostraSalario();
+
+echo $Funcionario02->DemitirFunconario();
+echo $Funcionario02->DemitirFunconario();
 
 ?>
 
