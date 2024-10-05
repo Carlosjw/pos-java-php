@@ -39,12 +39,12 @@ if (mysqli_connect_errno()) {
 
             // Armazena cada postagem no array, com o índice correspondente ao número da postagem
             $Postagens_Principais[] = array(
-                "img" => $postRegistro[2],         // Coluna com o link da imagem
+                "img" => $postRegistro[3],         // Coluna com o link da imagem
                 "nPostagem" => $NPostagens,        // Número da postagem (incrementado)
                 "tittle" => $postRegistro[1],      // Coluna com o título
-                "date" => $postRegistro[3],        // Coluna com a data
-                "description" => $postRegistro[4], // Coluna com a descrição
-                "comments" => $postRegistro[5],
+                "date" => $postRegistro[4],        // Coluna com a data
+                "description" => $postRegistro[5], // Coluna com a descrição
+                "comments" => $postRegistro[6],
                 //"categ " => $postRegistro[6]  // Coluna com os comentários
             );
         }

@@ -1,6 +1,6 @@
 <?php
-$contador = 1;
-while ($contador  <= 3) {
+$contador = 0;
+while ($contador  < 3) {
     $S = $Postagens_Principais[$contador]["nPostagem"];
     $T = $Postagens_Principais[$contador]["img"];
     $U = $Postagens_Principais[$contador]["tittle"];
