@@ -1,11 +1,6 @@
 <?php
 // CONFIGURANDO CONEXÃO COM SERVIDOR DE BANCO DE DADOS
-header("Content-Type: text/html; charset=utf-8", true);
-define("USUARIO", "root");
-define("SENHA", "");
-define("DB", "blog_pessoal");
-define("SERVER", "127.0.0.1");
-$conexao = mysqli_connect(SERVER, USUARIO, SENHA, DB);
+include("conection.php");
 
 /* vVERIFICANDO STAUTS DA CONEXÃO*/
 if (mysqli_connect_errno()) {
