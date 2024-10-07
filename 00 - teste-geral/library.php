@@ -118,8 +118,9 @@ if (mysqli_connect_errno()) {
                 "author" => $sql_livro[3],
                 "genre" => $sql_livro[4],
                 "pages" => $sql_livro[5],
-                "year" => $sql_livro[6],
-                "sinopse" => $sql_livro[7]
+                "year" => $sql_livro[7],
+                "sinopse" => $sql_livro[6],
+                "linkcompra" => $sql_livro[8]
             );
         };
         mysqli_free_result($result);
@@ -146,9 +147,12 @@ if (mysqli_connect_errno()) {
                 $E = $Biblioteca_SQL[$full_lenght]["pages"];
                 $F = $Biblioteca_SQL[$full_lenght]["year"];
                 $G = $Biblioteca_SQL[$full_lenght]["sinopse"];
+                $H = $Biblioteca_SQL[$full_lenght]["linkcompra"];
             ?>
                 <li class="w3-light-grey w3-card" style="margin-bottom: 10px">
-                    <img src=<?php echo $A ?> alt="default-image" class="w3-left w3-margin-right" style="width: 100px;">
+                    <a href=<?php echo $H ?> target="_blank">
+                        <img src=<?php echo $A ?> alt="default-image" class="w3-left w3-margin-right" style="width: 120px; margin-bottom: 10px">
+                    </a>
                     <span class="w3-xlarge"><b><?php echo $B ?></b></span>
                     <br>
                     <span><b>Autor:</b> <?php echo $C ?></span><br>

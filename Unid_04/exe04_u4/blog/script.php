@@ -18,9 +18,9 @@ if (mysqli_connect_errno()) {
         if ($registro = mysqli_fetch_row($result)) {
             // Sobre o autor
             $Bloco_Apres = array(
-                "img" => $registro[2],
-                "nome" => $registro[0],
-                "descr" => $registro[1]
+                "img" => $registro[1],
+                "nome" => $registro[2],
+                "descr" => $registro[3]
             );
         }
         // libera conexão da variável
@@ -39,12 +39,12 @@ if (mysqli_connect_errno()) {
 
             // Armazena cada postagem no array, com o índice correspondente ao número da postagem
             $Postagens_Principais[] = array(
-                "img" => $postRegistro[3],         // Coluna com o link da imagem
+                "img" => $postRegistro[1],         // Coluna com o link da imagem
                 "nPostagem" => $NPostagens,        // Número da postagem (incrementado)
-                "tittle" => $postRegistro[1],      // Coluna com o título
-                "date" => $postRegistro[4],        // Coluna com a data
-                "description" => $postRegistro[5], // Coluna com a descrição
-                "comments" => $postRegistro[6],
+                "tittle" => $postRegistro[2],      // Coluna com o título
+                "date" => $postRegistro[3],        // Coluna com a data
+                "description" => $postRegistro[4], // Coluna com a descrição
+                "comments" => $postRegistro[5],
                 //"categ " => $postRegistro[6]  // Coluna com os comentários
             );
         }
