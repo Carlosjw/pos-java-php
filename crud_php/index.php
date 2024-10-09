@@ -1,72 +1,48 @@
-<?php
-include 'connect.php';
-
-// Inserir novo usuário
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nome = $_POST['nome'];
-    $email = $_POST['email'];
-    $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
-
-    $sql = "INSERT INTO usuarios (nome, email, senha) VALUES ('$nome', '$email', '$senha')";
-
-    if ($conn->query($sql) === TRUE) {
-        echo "Usuário '" . $nome . "' criado com sucesso!";
-    } else {
-        echo "Erro ao criar usuário: " . $conn->error;
-    };
-}
-
-// Listar usuários
-$sql = "SELECT * FROM usuarios";
-$result = $conn->query($sql);
-?>
-
 <!DOCTYPE html>
-<html>
-
+<html lang="pt-br">
 <head>
-    <title>Cadastro de Usuários</title>
+    <meta charset="UTF-8">
+    <title>CRUD com PHP e MySQL</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <h2>Cadastro de Usuários</h2>
-    <form method="post" id="main-form">
-        <label for="nome">Nome:</label>
-        <input type="text" name="nome" required>
-        <label for="email">Email:</label>
-        <input type="email" name="email" required>
-
-        <label for="senha">Senha:</label>
-        <input type="password" name="senha" required>
-        <button type="submit">Cadastrar</button>
-
+    <h1>Gerenciamento de Usuários</h1>
+    <form id="userForm" method="POST" action="create.php">
+        <input type="text" name="nome" placeholder="Nome" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="number" name="idade" placeholder="Idade" required>
+        <input type="text" name="profissao" placeholder="Profissão" required>
+        <button type="submit">Adicionar Usuário</button>
     </form>
+    <div id="userList">
+        <?php include 'read.php'; ?>
+    </div>
 
-    <h2>Lista de Usuários</h2>
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Nome</th>
-            <th>Email</th>
-            <th>Ações</th>
-        </tr>
-        <?php
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                echo "<tr>";
-                echo "<td>" . $row["id"] . "</td>";
-                echo "<td>" . $row["nome"] . "</td>";
-                echo "<td>" . $row["email"] . "</td>";
-                echo "<td><a href='edit.php?id=" . $row["id"] . "'>Editar</a> | <a href='delete.php?id="
-                    . $row["id"] . "'>Excluir</a></td>";
-                echo "</tr>";
-            }
-        } else {
-            echo "<tr><td colspan='4'>Nenhum usuário encontrado.</td></tr>";
-        }
-        ?>
-    </table>
+    <!-- Modal de Edição -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close">×</span>
+            <form id="editForm" method="POST" action="update.php">
+                <input type="hidden" name="id" id="editId">
+                <input type="text" name="nome" id="editNome" required>
+                <input type="email" name="email" id="editEmail" required>
+                <input type="number" name="idade" id="editIdade" required>
+                <input type="text" name="profissao" id="editProfissao" required>
+                <button type="submit">Salvar Alterações</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Exclusão -->
+    <div id="deleteModal" class="modal">
+        <div class="modal-content">
+            <span class="close">×</span>
+            <p id="deleteMessage"></p>
+            <button id="confirmDelete">Sim</button>
+            <button id="cancelDelete">Cancelar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
-
 </html>
