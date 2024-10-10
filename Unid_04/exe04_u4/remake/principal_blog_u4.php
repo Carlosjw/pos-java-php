@@ -14,8 +14,10 @@
 </head>
 
 <body>
-    <div class="w3-card w3-container">
-        <h1>Testando</h1>
+    <div class="w3-card w3-container w3-padding" style="width: 480px;">
+        <?php
+        include("createPhone.php")
+        ?>
     </div>
 </body>
 
