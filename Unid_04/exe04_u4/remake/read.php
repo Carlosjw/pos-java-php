@@ -1,16 +1,16 @@
 <?php
-$LibraryBooks = array();
+$LibraryPhone = array();
 
 $sql = "SELECT * FROM celular";
 if ($searchResult = mysqli_query($conexao, $sql)) {
-    while ($singleBook = mysqli_fetch_row($singleBook)) {
+    while ($singlePhone = mysqli_fetch_row($singlePhone)) {
 
-        $LibraryBooks[] = array(
-            "img" => $singleBook[4],
-            "modelo" => $singleBook[1],
-            "modelo" => $singleBook[0],
-            "ram" => $singleBook[2],
-            "storage" => $singleBook[3]
+        $LibraryPhone[] = array(
+            "imageUrl" => $singlePhone[4],
+            "modelo" => $singlePhone[1],
+            "marca" => $singlePhone[0],
+            "ram" => $singlePhone[2],
+            "armazenamento" => $singlePhone[3]
         );
     }
 }
