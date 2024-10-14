@@ -1,16 +1,51 @@
 <?php
-class conta{
+class Conta
+{
     protected $agencia;
     protected $conta;
     protected $saldo;
 
     // Método consructor
-    public function conta($agencia, $conta, $saldo){
+    public function __construct($agencia, $conta, $saldo)
+    {
         $this->agencia = $agencia;
-        $this->conta =$conta;
-        if($saldo >- 0){
+        $this->conta = $conta;
+        if ($saldo >= 0) {
             $this->saldo = $saldo;
         }
     }
+
+    // MÉTODO PARA MOSTRAR AS INFORMAÇÕES DA CONTA
+    public function mostra_informacoes()
+    {
+        $retorno = "------------------------------------------------ <br>";
+        $retorno = $retorno . "Dados da conta <br>";
+        $retorno = $retorno . "Agencia: " . $this->agencia . "<br>";
+        $retorno = $retorno . "Conta: " . $this->conta . "<br>";
+        $retorno = $retorno . "Saldo: " . $this->saldo . "<br>";
+        $retorno = $retorno . "------------------------------------------------<br>";
+        return $retorno;
     }
-?>
+
+    // MÉTODO PARA DEPOSITAR DINHEIRO NA CONTA
+    public function depositar($quantia)
+    {
+        if ($quantia > 0) {
+            $this->saldo += $quantia;
+        }
+    }
+
+    // MÉTODO PARA MOSTRAR SALDO DA CONTA
+    public function mostra_saldo()
+    {
+        return "Saldo atual: ".$this->saldo."<br>";
+    }
+
+    // MÉTODO PARA SACAR DINHEIRO DA CONTA
+    public function sacar($quantia)
+    {
+        if ($quantia > 0) {
+            $this->saldo -= $quantia;
+        }
+    }
+}

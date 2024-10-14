@@ -7,7 +7,7 @@ class Personagem extends Jedi{
 
     public function Mostra_dados(){
         ECHO "<hr>";
-        echo "<b>Dados do Personagem:</b> <br>";
+        echo "<b>DADOS DO PERSONAGEM</b> <br>";
         echo "<b>Nome: </b>". $this->nome."<br>";
         echo "<b>Sabre de luz:</b> ".$this->sabre_de_luz."<br>";
         echo "<b>Força mental:</b> ". $this->forca_mental."<br>";
